@@ -2,9 +2,9 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   width: 90%;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid var(--GrayishBlue);
   margin: 0 auto;
-  height: 150px;
+  height: 100px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -31,24 +31,24 @@ export const MobileMenuButton = styled.div`
 `;
 
 export const ContainerMiddle = styled.nav`
-  width: 1200px;
-  border: 1px solid black;
+  max-width: 800px;
+  width: 70%;
   gap: 30px;
   display: flex;
   align-items: center;
   position: relative;
-  height: 100px;
 
   a {
     position: relative; /* Isso permite posicionar o pseudo-elemento em relação a este link */
     text-decoration: none;
     cursor: pointer;
+    text-align: center;
 
     &::after {
       content: '';
       position: absolute;
       left: 0;
-      bottom: -60px; /* Ajuste esta distância para controlar o quão longe a borda está do item do menu */
+      bottom: -40px; /* Ajuste esta distância para controlar o quão longe a borda está do item do menu */
       width: 100%;
       height: 5px; /* Altura da borda */
       background-color: transparent; /* Cor de fundo inicial (transparente) */
@@ -56,7 +56,9 @@ export const ContainerMiddle = styled.nav`
     }
 
     &:hover::after {
-      background-color: black; /* A cor da borda que aparecerá ao passar o mouse */
+      background-color: var(
+        --Orange
+      ); /* A cor da borda que aparecerá ao passar o mouse */
     }
   }
 
@@ -70,19 +72,37 @@ export const ContainerMiddle = styled.nav`
 `;
 
 export const ContainerLeft = styled.div`
-  width: 200px;
-  border: 1px solid black;
+  max-width: 200px;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media (max-width: 768px) {
+    justify-content: flex-start;
+  }
 `;
 
 export const ContainerRight = styled.div`
-  width: 20%;
-  max-width: 150px;
-  border: 1px solid black;
+  width: 30%;
+  max-width: 180px;
   display: flex;
   justify-content: space-around;
+  align-items: center;
 `;
 
 export const ContainerIcon = styled.div`
   border-radius: 50%;
   border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 3px solid var(--Orange);
+  width: 50px;
+
+  @media (max-width: 768px) {
+    width: 30px;
+    border: none;
+  }
 `;

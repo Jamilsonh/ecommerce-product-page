@@ -19,7 +19,6 @@ export default function Header() {
           height={15}
           alt='logo'
           sizes='100vw'
-          onClick={() => setMenuIsVisible(true)}
         />
       </MobileMenuButton>
       <ContainerLeft>
@@ -30,7 +29,7 @@ export default function Header() {
           alt='logo'
           sizes='100vw'
           style={{
-            width: '100%',
+            width: '80%',
             height: 'auto',
           }}
         />
@@ -41,12 +40,22 @@ export default function Header() {
         <a>Men</a>
         <a>Women</a>
         <a>About</a>
-        <a>Contat</a>
+        <a>Contact</a>
       </ContainerMiddle>
       <ContainerRight>
-        <Image src='icon-cart.svg' width='30' height='30' alt='logo' />
+        <Image src='icon-cart.svg' width='26' height='24' alt='logo' />
         <ContainerIcon>
-          <Image src='/image-avatar.png' width='30' height='30' alt='logo' />
+          <Image
+            src='/image-avatar.png'
+            width={22}
+            height={22}
+            alt='logo'
+            sizes='100vw'
+            style={{
+              width: '100%',
+              height: 'auto',
+            }}
+          />
         </ContainerIcon>
       </ContainerRight>
     </Container>
