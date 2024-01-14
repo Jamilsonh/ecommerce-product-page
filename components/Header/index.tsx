@@ -2,6 +2,7 @@ import React from 'react';
 import {
   Container,
   ContainerIcon,
+  ContainerImageCart,
   ContainerLeft,
   ContainerMiddle,
   ContainerRight,
@@ -19,6 +20,10 @@ export default function Header() {
           height={15}
           alt='logo'
           sizes='100vw'
+          style={{
+            width: '100%',
+            height: 'auto',
+          }}
         />
       </MobileMenuButton>
       <ContainerLeft>
@@ -29,7 +34,7 @@ export default function Header() {
           alt='logo'
           sizes='100vw'
           style={{
-            width: '80%',
+            width: '90%',
             height: 'auto',
           }}
         />
@@ -43,7 +48,19 @@ export default function Header() {
         <a>Contact</a>
       </ContainerMiddle>
       <ContainerRight>
-        <Image src='icon-cart.svg' width='26' height='24' alt='logo' />
+        <ContainerImageCart>
+          <Image
+            src='icon-cart.svg'
+            width='26'
+            height='24'
+            alt='logo'
+            style={{
+              width: '100%',
+              height: 'auto',
+            }}
+          />
+        </ContainerImageCart>
+
         <ContainerIcon>
           <Image
             src='/image-avatar.png'

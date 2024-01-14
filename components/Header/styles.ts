@@ -22,11 +22,14 @@ export const MobileMenuButton = styled.div`
   background-color: transparent;
 
   @media (max-width: 768px) {
-    display: block;
+    display: flex;
     text-decoration: none;
     border: none;
     background-color: transparent;
     cursor: pointer;
+    height: 40px;
+    margin-bottom: -3px;
+    align-items: center;
   }
 `;
 
@@ -80,15 +83,26 @@ export const ContainerLeft = styled.div`
 
   @media (max-width: 768px) {
     justify-content: flex-start;
+    margin-left: -25px;
   }
 `;
 
 export const ContainerRight = styled.div`
-  width: 30%;
+  width: 25%;
   max-width: 180px;
   display: flex;
   justify-content: space-around;
   align-items: center;
+`;
+
+export const ContainerImageCart = styled.div`
+  width: 35px; // Tamanho padrão para desktop
+  display: flex;
+  align-items: center;
+
+  @media (max-width: 600px) {
+    width: 22px;
+  }
 `;
 
 export const ContainerIcon = styled.div`
@@ -102,7 +116,7 @@ export const ContainerIcon = styled.div`
   width: 50px;
 
   @media (max-width: 768px) {
-    width: 30px;
+    width: 25px;
     border: none;
   }
 `;
