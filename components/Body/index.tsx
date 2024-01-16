@@ -1,10 +1,11 @@
 import React from 'react';
 import { Container } from './styles';
+import LeftBody from './LeftBody';
 
 export default function Body() {
   return (
     <Container>
-      <h1>BODY DA PAGINA</h1>
+      <LeftBody />
     </Container>
   );
 }
