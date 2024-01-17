@@ -1,14 +1,13 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  max-width: 700px;
-  height: 600px;
+  width: 90%;
   border: 1px solid black;
   margin: 0 auto;
-  margin-top: 5rem;
+  margin-top: 2rem;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
 
   h1 {
     font-size: 4rem;

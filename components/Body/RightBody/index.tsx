@@ -1,5 +1,6 @@
 import React from 'react';
+import { Container } from './styles';
 
 export default function RightBody() {
-  return <div>index</div>;
+  return <Container>index</Container>;
 }
