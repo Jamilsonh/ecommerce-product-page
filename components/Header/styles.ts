@@ -1,10 +1,11 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
+  box-sizing: border-box;
   width: 90%;
   border-bottom: 1px solid var(--GrayishBlue);
   margin: 0 auto;
-  height: 100px;
+  min-height: 15vh;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -51,7 +52,7 @@ export const ContainerMiddle = styled.nav`
       content: '';
       position: absolute;
       left: 0;
-      bottom: -40px; /* Ajuste esta distância para controlar o quão longe a borda está do item do menu */
+      bottom: -6.5vh; /* Ajuste esta distância para controlar o quão longe a borda está do item do menu */
       width: 100%;
       height: 5px; /* Altura da borda */
       background-color: transparent; /* Cor de fundo inicial (transparente) */

@@ -24,3 +24,9 @@ body {
   --White: hsl(0, 0%, 100%);
   --Black/*(with 75% opacity for lightbox background)*/: hsl(0, 0%, 0%);
 }
+
+@media (max-width: 768px) {
+  html {
+    font-size: 12px; /* 1rem = 14px */
+  }
+}

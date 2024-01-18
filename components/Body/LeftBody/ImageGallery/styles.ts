@@ -4,6 +4,10 @@ export const ContainerImage = styled.div`
   width: 500px;
   border-radius: 25px;
   overflow: hidden;
+
+  @media (max-width: 768px) {
+    width: 300px;
+  }
 `;
 
 export const ContainerMenuImage = styled.div`
@@ -20,5 +24,9 @@ export const ContainerMenuImage = styled.div`
     &:hover {
       border-color: blue;
     }
+  }
+
+  @media (max-width: 768px) {
+    display: none;
   }
 `;
