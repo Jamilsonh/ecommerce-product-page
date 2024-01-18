@@ -29,4 +29,9 @@ body {
   html {
     font-size: 12px; /* 1rem = 14px */
   }
+
+  body {
+    width: 100%;
+    height: auto;
+  }
 }

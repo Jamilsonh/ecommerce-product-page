@@ -6,7 +6,8 @@ export const ContainerImage = styled.div`
   overflow: hidden;
 
   @media (max-width: 768px) {
-    width: 300px;
+    width: 100%;
+    border-radius: 0;
   }
 `;
 

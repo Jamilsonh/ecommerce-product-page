@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  width: 90%;
+  width: 80%;
   margin: 0 auto;
   min-height: 85vh;
   display: flex;
@@ -13,5 +13,6 @@ export const Container = styled.div`
 
   @media (max-width: 768px) {
     flex-direction: column;
+    width: 100%;
   }
 `;

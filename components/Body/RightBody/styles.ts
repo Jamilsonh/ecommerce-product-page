@@ -28,6 +28,11 @@ export const Container = styled.div`
     font-weight: 400;
     text-decoration: line-through;
   }
+
+  @media (max-width: 768px) {
+    width: 80%;
+    justify-content: space-around;
+  }
 `;
 
 export const ContainerPrice = styled.div`
@@ -49,6 +54,10 @@ export const ContainerButton = styled.div`
   display: flex;
   margin-top: 1rem;
   gap: 2rem;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 export const ContainerAmountItens = styled.div`
