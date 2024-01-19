@@ -100,10 +100,26 @@ export const ContainerImageCart = styled.div`
   width: 35px; // Tamanho padrão para desktop
   display: flex;
   align-items: center;
+  cursor: pointer;
+  position: relative;
 
   @media (max-width: 600px) {
     width: 22px;
   }
+`;
+
+export const CartContainer = styled.div`
+  display: ${(props) => (props.isVisible ? 'block' : 'none')};
+  position: fixed;
+  width: 350px; // Exemplo de largura
+  height: 200px;
+  right: 5vw;
+  top: 100px;
+  z-index: 100;
+  background-color: var(--White);
+  box-shadow: black 0px 0px 10px;
+  color: white;
+  // ... (outros estilos, como sombra, cor de fundo etc.)
 `;
 
 export const ContainerIcon = styled.div`

@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
+  CartContainer,
   Container,
   ContainerIcon,
   ContainerImageCart,
@@ -11,6 +12,8 @@ import {
 import Image from 'next/image';
 
 export default function Header() {
+  const [isCartVisible, setIsCartVisible] = useState(false);
+
   return (
     <Container>
       <MobileMenuButton>
@@ -48,7 +51,7 @@ export default function Header() {
         <a>Contact</a>
       </ContainerMiddle>
       <ContainerRight>
-        <ContainerImageCart>
+        <ContainerImageCart onClick={() => setIsCartVisible(!isCartVisible)}>
           <Image
             src='icon-cart.svg'
             width='26'
@@ -60,6 +63,10 @@ export default function Header() {
             }}
           />
         </ContainerImageCart>
+
+        <CartContainer isVisible={isCartVisible}>
+          <h1>oi</h1>
+        </CartContainer>
 
         <ContainerIcon>
           <Image
