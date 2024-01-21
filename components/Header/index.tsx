@@ -62,11 +62,10 @@ export default function Header() {
               height: 'auto',
             }}
           />
+          <CartContainer isVisible={isCartVisible}>
+            <h1>oi</h1>
+          </CartContainer>
         </ContainerImageCart>
-
-        <CartContainer isVisible={isCartVisible}>
-          <h1>oi</h1>
-        </CartContainer>
 
         <ContainerIcon>
           <Image

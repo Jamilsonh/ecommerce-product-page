@@ -110,11 +110,14 @@ export const ContainerImageCart = styled.div`
 
 export const CartContainer = styled.div`
   display: ${(props) => (props.isVisible ? 'block' : 'none')};
-  position: fixed;
+  position: absolute;
   width: 350px; // Exemplo de largura
   height: 200px;
-  right: 5vw;
-  top: 100px;
+  top: 100%; // para aparecer logo abaixo do ícone do carrinho
+  right: 50%; // inicia a partir do centro do ícone do carrinho
+  transform: translateX(
+    50%
+  ); // ajusta para que o centro do container alinhe com o centro do ícone do carrinho
   z-index: 100;
   background-color: var(--White);
   box-shadow: black 0px 0px 10px;
