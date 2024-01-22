@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Inter, Kumbh_Sans } from 'next/font/google';
 import '../styles/globals.css';
+import StoreProvider from '@/provider';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -19,8 +20,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang='en'>
-      <body className={mainFontFamily.className}>{children}</body>
-    </html>
+    <StoreProvider>
+      <html lang='en'>
+        <body className={mainFontFamily.className}>{children}</body>
+      </html>
+    </StoreProvider>
   );
 }

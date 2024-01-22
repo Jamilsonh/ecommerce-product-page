@@ -63,7 +63,7 @@ export default function Header() {
             }}
           />
           <CartContainer isVisible={isCartVisible}>
-            <h1>oi</h1>
+            <h3>Cart</h3>
           </CartContainer>
         </ContainerImageCart>
 
