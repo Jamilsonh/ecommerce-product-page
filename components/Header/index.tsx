@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import {
   CartContainer,
   Container,
@@ -10,9 +10,12 @@ import {
   MobileMenuButton,
 } from './styles';
 import Image from 'next/image';
+import { StoreContext } from '@/context';
 
 export default function Header() {
   const [isCartVisible, setIsCartVisible] = useState(false);
+
+  const { cartItems } = useContext(StoreContext);
 
   return (
     <Container>
@@ -64,6 +67,14 @@ export default function Header() {
           />
           <CartContainer isVisible={isCartVisible}>
             <h3>Cart</h3>
+            <div>
+              {cartItems.map((item, index) => (
+                <div key={index}>
+                  <li>{item.name}</li>
+                  <li>R$ {item.quantity}</li>
+                </div>
+              ))}
+            </div>
           </CartContainer>
         </ContainerImageCart>
 
