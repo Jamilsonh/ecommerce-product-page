@@ -3,6 +3,8 @@
 import { useState } from 'react';
 import { StoreContext } from '@/context';
 
+import ImageProduct from '@/public/image-product-1-thumbnail.jpg';
+
 export default function StoreProvider({ children }) {
   const [cartItems, setCartItems] = useState([]);
   const [quantity, setQuantity] = useState(0);
@@ -19,8 +21,10 @@ export default function StoreProvider({ children }) {
 
   const addToCart = () => {
     const newItem = {
-      name: 'Product Name',
+      name: 'Fall Limited Edition Sneakers',
+      price: 125.0,
       quantity: quantity,
+      img: '/image-product-1-thumbnail.jpg',
     };
     setCartItems([...cartItems, newItem]);
     setQuantity(0);

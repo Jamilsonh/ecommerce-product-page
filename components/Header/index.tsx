@@ -1,21 +1,26 @@
 import React, { useContext, useState } from 'react';
 import {
+  ButtonCheckout,
   CartContainer,
   Container,
+  ContainerCart,
+  ContainerCartItems,
   ContainerIcon,
   ContainerImageCart,
   ContainerLeft,
   ContainerMiddle,
   ContainerRight,
+  ContainerText,
   MobileMenuButton,
 } from './styles';
 import Image from 'next/image';
 import { StoreContext } from '@/context';
+import IconDelete from '@/public/icon-delete.svg';
 
 export default function Header() {
   const [isCartVisible, setIsCartVisible] = useState(false);
 
-  const { cartItems } = useContext(StoreContext);
+  const { cartItems, cleanCart } = useContext(StoreContext);
 
   return (
     <Container>
@@ -67,14 +72,47 @@ export default function Header() {
           />
           <CartContainer isVisible={isCartVisible}>
             <h3>Cart</h3>
-            <div>
-              {cartItems.map((item, index) => (
-                <div key={index}>
-                  <li>{item.name}</li>
-                  <li>R$ {item.quantity}</li>
-                </div>
-              ))}
-            </div>
+            {cartItems.length > 0 ? (
+              <ContainerCart>
+                {cartItems.map((item, index) => (
+                  <ContainerCartItems key={index}>
+                    <Image
+                      src={item.img}
+                      alt={item.name}
+                      width={50}
+                      height={50}
+                      style={{
+                        width: '55px',
+                        height: '55px',
+                        borderRadius: '5px',
+                      }}
+                    />
+                    <ContainerText>
+                      <div>{item.name}</div>
+                      <div>
+                        ${item.price}.00 x {item.quantity}{' '}
+                        <strong>${item.price * item.quantity}</strong>
+                      </div>
+                    </ContainerText>
+                    <Image
+                      src={IconDelete}
+                      alt={'oi'}
+                      width={50}
+                      height={50}
+                      style={{
+                        width: '14px',
+                        height: '16px',
+                        cursor: 'pointer',
+                      }}
+                      onClick={cleanCart}
+                    />
+                  </ContainerCartItems>
+                ))}
+                <ButtonCheckout>Checkout</ButtonCheckout>
+              </ContainerCart>
+            ) : (
+              <div>Seu carrinho está vazio.</div>
+            )}
           </CartContainer>
         </ContainerImageCart>
 

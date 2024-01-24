@@ -112,7 +112,7 @@ export const CartContainer = styled.div`
   display: ${(props) => (props.isVisible ? 'block' : 'none')};
   position: absolute;
   width: 350px; // Exemplo de largura
-  height: 230px;
+  height: 250px;
   top: 200%; // para aparecer logo abaixo do ícone do carrinho
   right: 50%; // inicia a partir do centro do ícone do carrinho
   transform: translateX(
@@ -122,10 +122,56 @@ export const CartContainer = styled.div`
   background-color: var(--White);
   box-shadow: black 0px 0px 10px;
   border-radius: 10px;
-  padding: 0.5rem 1.5rem;
   box-sizing: border-box;
   font-weight: 700;
+  cursor: default;
   // ... (outros estilos, como sombra, cor de fundo etc.)
+
+  h3 {
+    border-bottom: 4px solid var(--LightGrayishBlue);
+    padding: 1.5rem 1rem;
+  }
+`;
+
+export const ContainerCart = styled.div`
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0.5rem 0;
+  box-sizing: border-box;
+`;
+
+export const ContainerCartItems = styled.div`
+  width: 90%;
+  height: 25%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+
+  h3 {
+    font-size: 15px;
+  }
+`;
+
+export const ContainerText = styled.div`
+  color: var(--GrayishBlue);
+  height: 100%;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  margin-left: 1rem;
+  line-height: 1.5rem;
+  font-size: 0.9rem;
+  color: hsl(219, 9%, 45%);
+  font-weight: 400;
+
+  strong {
+    color: black;
+    font-weight: 800;
+  }
 `;
 
 export const ContainerIcon = styled.div`
@@ -141,5 +187,21 @@ export const ContainerIcon = styled.div`
   @media (max-width: 768px) {
     width: 25px;
     border: none;
+  }
+`;
+
+export const ButtonCheckout = styled.div`
+  display: flex;
+  padding: 1.25rem 7.5rem;
+  border-radius: 10px;
+  background-color: hsl(26, 100%, 55%);
+  justify-content: center;
+  color: var(--White);
+  gap: 1rem;
+
+  h3 {
+    color: var(--White);
+    font-weight: 400;
+    width: 7rem;
   }
 `;
