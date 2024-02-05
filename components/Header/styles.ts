@@ -143,6 +143,15 @@ export const ContainerCart = styled.div`
   box-sizing: border-box;
 `;
 
+export const ContainerCartEmpty = styled.div`
+  height: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--DarkGrayishBlue);
+  font-weight: 800;
+`;
+
 export const ContainerCartItems = styled.div`
   width: 90%;
   height: 25%;
@@ -183,6 +192,7 @@ export const ContainerIcon = styled.div`
   overflow: hidden;
   border: 3px solid var(--Orange);
   width: 50px;
+  cursor: pointer;
 
   @media (max-width: 768px) {
     width: 25px;

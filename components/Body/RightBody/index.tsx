@@ -81,6 +81,9 @@ export default function RightBody() {
             height='4'
             alt={'minus'}
             onClick={handleDecrease}
+            style={{
+              cursor: 'pointer',
+            }}
           />
           <h3>{quantity}</h3>
           <Image
@@ -89,13 +92,15 @@ export default function RightBody() {
             height='12'
             alt={'plus'}
             onClick={handleIncrease}
+            style={{
+              cursor: 'pointer',
+            }}
           />
         </ContainerAmountItens>
         <ButtonAddToCart onClick={addToCart}>
           <Image src={iconCartWhite} width='18' height='16' alt={'cart'} />
           <h3>Add to cart</h3>
         </ButtonAddToCart>
-        <button onClick={cleanCart}>Clear</button>
       </ContainerButton>
     </Container>
   );

@@ -83,6 +83,7 @@ export const ButtonAddToCart = styled.div`
   justify-content: center;
   color: var(--White);
   gap: 1rem;
+  cursor: pointer;
 
   h3 {
     color: var(--White);

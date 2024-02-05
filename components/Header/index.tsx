@@ -4,6 +4,7 @@ import {
   CartContainer,
   Container,
   ContainerCart,
+  ContainerCartEmpty,
   ContainerCartItems,
   ContainerIcon,
   ContainerImageCart,
@@ -20,7 +21,7 @@ import IconDelete from '@/public/icon-delete.svg';
 export default function Header() {
   const [isCartVisible, setIsCartVisible] = useState(false);
 
-  const { cartItems, cleanCart } = useContext(StoreContext);
+  const { cartItems, cleanCart, quantity } = useContext(StoreContext);
 
   return (
     <Container>
@@ -60,6 +61,13 @@ export default function Header() {
       </ContainerMiddle>
       <ContainerRight>
         <ContainerImageCart onClick={() => setIsCartVisible(!isCartVisible)}>
+          <ul>
+            {cartItems.map((item, index) => (
+              <li key={index}>
+                <p>{item.quantity}</p>
+              </li>
+            ))}
+          </ul>
           <Image
             src='icon-cart.svg'
             width='26'
@@ -111,12 +119,12 @@ export default function Header() {
                 <ButtonCheckout>Checkout</ButtonCheckout>
               </ContainerCart>
             ) : (
-              <div>Seu carrinho está vazio.</div>
+              <ContainerCartEmpty>Your cart is empty.</ContainerCartEmpty>
             )}
           </CartContainer>
         </ContainerImageCart>
 
-        <ContainerIcon>
+        <ContainerIcon onClick={() => setIsCartVisible(!isCartVisible)}>
           <Image
             src='/image-avatar.png'
             width={22}
