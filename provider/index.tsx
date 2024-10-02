@@ -5,27 +5,17 @@ import { StoreContext } from '@/context';
 
 import ImageProduct from '@/public/image-product-1-thumbnail.jpg';
 
-// Defina a interface do contexto
-interface StoreContextType {
-  cartItems: Array<{
-    name: string;
-    price: number;
-    quantity: number;
-    img: string;
-  }>;
-  setCartItems: React.Dispatch<React.SetStateAction<any[]>>;
+interface CartItem {
+  name: string;
+  price: number;
   quantity: number;
-  setQuantity: React.Dispatch<React.SetStateAction<number>>;
-  handleIncrease: () => void;
-  handleDecrease: () => void;
-  addToCart: () => void;
-  cleanCart: () => void;
+  img: string;
 }
 
 // Exporte o contexto
 
 export default function StoreProvider({ children }: { children: ReactNode }) {
-  const [cartItems, setCartItems] = useState([]);
+  const [cartItems, setCartItems] = useState<CartItem[]>([]);
   const [quantity, setQuantity] = useState(0);
 
   const handleIncrease = () => {
