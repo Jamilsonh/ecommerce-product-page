@@ -23,7 +23,7 @@ export default function Header() {
   const context = useContext(StoreContext);
 
   if (!context) {
-    throw new Error('StoreContext must be used within a StoreProvider');
+    throw new Error('StoreContext must be usesd within a StoreProvider');
   }
 
   const { cartItems, cleanCart, quantity } = context;
