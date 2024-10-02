@@ -20,8 +20,13 @@ import IconDelete from '@/public/icon-delete.svg';
 
 export default function Header() {
   const [isCartVisible, setIsCartVisible] = useState(false);
+  const context = useContext(StoreContext);
 
-  const { cartItems, cleanCart, quantity } = useContext(StoreContext);
+  if (!context) {
+    throw new Error('StoreContext must be used within a StoreProvider');
+  }
+
+  const { cartItems, cleanCart, quantity } = context;
 
   return (
     <Container>
