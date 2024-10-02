@@ -16,14 +16,13 @@ import { useContext } from 'react';
 import { StoreContext } from '@/context';
 
 export default function RightBody() {
-  const {
-    handleIncrease,
-    handleDecrease,
-    addToCart,
-    cleanCart,
-    quantity,
-    cartItems,
-  } = useContext(StoreContext);
+  const context = useContext(StoreContext);
+
+  if (!context) {
+    throw new Error('StoreContext must be used within a StoreProvider');
+  }
+
+  const { handleIncrease, handleDecrease, addToCart, quantity } = context;
 
   /*
   const [quantity, setQuantity] = useState(0);
@@ -56,7 +55,6 @@ export default function RightBody() {
   */
 
   console.log(quantity);
-  console.log(cartItems);
 
   return (
     <Container>

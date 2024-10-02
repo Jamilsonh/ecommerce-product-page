@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
+interface CartContainerProps {
+  isVisible: boolean;
+}
+
 export const Container = styled.div`
   box-sizing: border-box;
   width: 90%;
@@ -108,16 +112,14 @@ export const ContainerImageCart = styled.div`
   }
 `;
 
-export const CartContainer = styled.div`
+export const CartContainer = styled.div<CartContainerProps>`
   display: ${(props) => (props.isVisible ? 'block' : 'none')};
   position: absolute;
-  width: 350px; // Exemplo de largura
+  width: 350px;
   height: 250px;
-  top: 200%; // para aparecer logo abaixo do ícone do carrinho
-  right: 50%; // inicia a partir do centro do ícone do carrinho
-  transform: translateX(
-    60%
-  ); // ajusta para que o centro do container alinhe com o centro do ícone do carrinho
+  top: 200%;
+  right: 50%;
+  transform: translateX(60%);
   z-index: 1;
   background-color: var(--White);
   box-shadow: black 0px 0px 10px;
@@ -125,12 +127,12 @@ export const CartContainer = styled.div`
   box-sizing: border-box;
   font-weight: 700;
   cursor: default;
-  // ... (outros estilos, como sombra, cor de fundo etc.)
 
   h3 {
     border-bottom: 4px solid var(--LightGrayishBlue);
     padding: 1.5rem 1rem;
   }
+  // outros estilos...
 `;
 
 export const ContainerCart = styled.div`
