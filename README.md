@@ -11,8 +11,6 @@ O objetivo do projeto é reproduzir o design e a funcionalidade de um site, conf
 - Next.js
 - TypeScript
 - Styled-components
-- HTML5
-- CSS3
 - JavaScript (opcional, se aplicável)
 - Context API
 
